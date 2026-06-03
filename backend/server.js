@@ -49,6 +49,12 @@ app.options("*", cors(corsOptions));
 
 app.use(express.json({ limit: "1mb" }));
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "Daily Habits API is running"
+  });
+});
+
 app.get("/api/health", (req, res) => {
   res.json({
     status: "OK",
